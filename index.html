@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot API Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>🤖 Discord Bot API Explorer</h1>
+    </nav>
+
+    <div class="container">
+        <section class="card">
+            <h2>Bot Information</h2>
+            <div class="controls-row">
+                <button id="loadBotInfo" class="btn">Load Bot Info</button>
+            </div>
+            <div id="botInfo" class="bot-info hidden">
+                <img id="botAvatar" alt="Bot Avatar" class="avatar">
+                <div class="bot-meta">
+                    <h3 id="botName"></h3>
+                    <p>ID: <span id="botId"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Guilds</h2>
+            <div class="controls-row">
+                <button id="loadGuilds" class="btn">Load Guilds</button>
+                <div class="search-group">
+                    <input id="searchInput" type="text" placeholder="Search servers by name...">
+                    <button id="searchBtn" class="btn small">Search</button>
+                </div>
+                <select id="sortSelect" class="select">
+                    <option value="az">Sort: A → Z</option>
+                    <option value="za">Sort: Z → A</option>
+                </select>
+            </div>
+
+            <div id="error" class="error hidden"></div>
+            <div id="loading" class="loading hidden">Loading...</div>
+
+            <div id="resultsInfo" class="results-info hidden"></div>
+            <div id="guildsContainer" class="results-grid"></div>
+        </section>
+
+        <footer class="footer card">
+            <p>Powered by the Discord API. <span class="muted">(This demo uses client-side requests; ensure token safety.)</span></p>
+        </footer>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
